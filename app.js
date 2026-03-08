@@ -4,18 +4,16 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // --- Firebase Configuration ---
+// --- Firebase Configuration ---
 const firebaseConfig = {
-    apiKey: "AIzaSyC3m60CaVD7XYezKxLQIr5FlX6U47OTMdM",
+    // This looks for the secret you named GOOGLE_API_KEY
+    apiKey: typeof process !== 'undefined' ? process.env.GOOGLE_API_KEY : "RESTRICTED_KEY_FALLBACK",
     authDomain: "blooddonorfinder-680f5.firebaseapp.com",
     projectId: "blooddonorfinder-680f5",
     storageBucket: "blooddonorfinder-680f5.firebasestorage.app",
     messagingSenderId: "330871496543",
     appId: "1:330871496543:web:e92a86a9146daa3ce660ea"
 };
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-let isAdmin = false;
 
 // --- VIEW NAVIGATION ---
 window.showView = (view) => {
