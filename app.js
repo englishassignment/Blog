@@ -5,15 +5,19 @@ import {
 
 // --- Firebase Configuration ---
 // --- Firebase Configuration ---
+// --- Firebase Configuration ---
 const firebaseConfig = {
-    // We use a unique placeholder that GitHub will replace
-    apiKey: "___REPLACE_ME_WITH_REAL_KEY___", 
+    apiKey: "AIzaSyC3m60CaVD7XYezKxLQIr5FlX6U47OTMdM",
     authDomain: "blooddonorfinder-680f5.firebaseapp.com",
     projectId: "blooddonorfinder-680f5",
     storageBucket: "blooddonorfinder-680f5.firebasestorage.app",
     messagingSenderId: "330871496543",
     appId: "1:330871496543:web:e92a86a9146daa3ce660ea"
 };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+let isAdmin = false;
 
 // --- VIEW NAVIGATION ---
 window.showView = (view) => {
