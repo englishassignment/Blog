@@ -6,8 +6,8 @@ import {
 // --- Firebase Configuration ---
 // --- Firebase Configuration ---
 const firebaseConfig = {
-    // This looks for the secret you named GOOGLE_API_KEY
-    apiKey: typeof process !== 'undefined' ? process.env.GOOGLE_API_KEY : "RESTRICTED_KEY_FALLBACK",
+    // We use a unique placeholder that GitHub will replace
+    apiKey: "___REPLACE_ME_WITH_REAL_KEY___", 
     authDomain: "blooddonorfinder-680f5.firebaseapp.com",
     projectId: "blooddonorfinder-680f5",
     storageBucket: "blooddonorfinder-680f5.firebasestorage.app",
