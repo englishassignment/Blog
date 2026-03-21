@@ -96,28 +96,22 @@
         </section>
                      
     </main>
-        <div id="admin-modal" class="modal-overlay" style="display:none;">
-        <div class="modal-content">
-            <div class="modal-close" onclick="window.closeAdminModal()">
-                <i data-lucide="x"></i>
-            </div>
-            <div class="modal-icon">
-                <i data-lucide="shield-check" size="40"></i>
-            </div>
-            <h3>Teacher Access</h3>
-            <p>Verify your identity to enable Edit/Delete privileges.</p>
-            
-            <div class="modal-form">
-                <div class="input-group">
-                    <i data-lucide="lock" size="16"></i>
-                    <input type="password" id="adminPass" placeholder="Teacher Password">
-                </div>
-                <button onclick="window.verifyAdmin()" class="modal-login-btn">
-                    Verify Identity
-                </button>
-            </div>
+        <div id="admin-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3><i data-lucide="shield-check"></i> Teacher Access</h3>
+            <button onclick="window.closeAdminModal()" class="close-x">&times;</button>
         </div>
+        <div class="modal-body">
+            <label for="adminPass">Verification Required</label>
+            <input type="password" id="adminPass" class="input-pro" placeholder="Enter Teacher Password...">
+            <button onclick="window.verifyAdmin()" class="auth-btn">
+                Unlock Dashboard
+            </button>
         </div>
+    </div>
+        </div>
+    
 <div id="copyright" align="center">
     &copy;  2026 Athul Studio - All Rights Reserved.
 </div>
