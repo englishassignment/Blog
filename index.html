@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>AEC Blog | Student Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
@@ -14,12 +13,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo" onclick="window.showView('home')">
-                <i data-lucide="graduation-cap"></i>
-                <span>AEC<b>Blog</b></span>
+                <i data-lucide="graduation-cap"></i> AEC<b>Blog</b>
             </div>
             <div class="nav-links">
                 <button class="nav-btn" onclick="window.showView('home')">
-                    <i data-lucide="layout-grid"></i> <span>Blog</span>
+                    <i data-lucide="layout-grid"></i> <span>Feed</span>
                 </button>
                 <button class="nav-btn" onclick="window.openAdminModal()">
                     <i data-lucide="shield-check"></i> <span>Teacher</span>
@@ -32,97 +30,78 @@
     </nav>
 
     <main class="container">
-        <section id="home-view" class="view">
+<section id="home-view" class="view">
             <div class="hero">
                 <div class="badge">English</div>
                 <h1>Blog Assignment</h1>
-                <p>BCA BLOG WEBSITE</p>
+                <p>AEC ASSIGNMENT WEBSITE</p>
             </div>
             <div id="posts-container" class="feed-grid"></div>
         </section>
 
         <section id="submit-view" class="view" style="display: none;">
-            <div class="submit-card">
-                <aside class="submit-aside">
-                    <div class="brand-icon"><i data-lucide="upload-cloud" size="32"></i></div>
-                    <h2>New Assignment</h2>
-                    <p>Share your findings and methodology with the class community.</p>
-                    <div class="form-tips">
-                        <p><i data-lucide="sparkles" size="14"></i> <b>Tip:</b> High-quality image URLs make your Assignment stand out.</p>
-                    </div>
-                </aside>
+            <div class="submit-container-pro">
+                <header class="submit-header-banner">
+                    <i data-lucide="pen-tool" size="40"></i>
+                    <h2>New Submission</h2>
+                </header>
 
-                <div class="submit-form-area">
-                    <div class="form-section">
-                        <span class="section-label">Identity & Context</span>
-                        <div class="field-row">
-                            <div class="field">
-                                <label class="inner-label">Student Name(s)</label>
-                                <div id="names-container">
-                                    
-                                    <div class="input-wrapper">
-                                        <i data-lucide="user"></i>
-                                        <input type="text" class="student-name-input" placeholder="Name">
-                                    </div>
-                                </div>
-                                <button type="button" class="add-input-btn-sm" onclick="window.addDynamicInput('names-container', 'student-name-input', 'user-plus')">
-                                    <i data-lucide="user-plus" size="14"></i> Add Assignment Partner
-                                </button>
-                            </div>
-                            <div class="field">
-                                <label class="inner-label">Assignment Question</label>
-                                <div class="input-wrapper">
-                                    <i data-lucide="bookmark"></i>
-                                    <input type="text" id="postTitle" placeholder="Question">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <span class="section-label">Media & Resources</span>
-                        <div id="images-container">
-                            <label class="inner-label">Image URLs</label>
-                            <div class="input-wrapper"><i data-lucide="image"></i><input type="url" class="photo-input" placeholder="https://image-url.com"></div>
-                        </div>
-                        <button class="add-input-btn" onclick="window.addDynamicInput('images-container', 'photo-input', 'image')">
-                            <i data-lucide="plus-circle"></i> Add Image URL
-                        </button>
-                        
-                        <div id="references-container" style="margin-top:25px;">
-                            <label class="inner-label">Source Links</label>
-                            <div class="input-wrapper"><i data-lucide="link"></i><input type="url" class="ref-input" placeholder="https://research-source.com"></div>
-                        </div>
-                        <button class="add-input-btn" onclick="window.addDynamicInput('references-container', 'ref-input', 'link')">
-                            <i data-lucide="external-link"></i> Add Reference Source
+                <div class="submit-form-body">
+                    <div class="form-card-section">
+                        <div class="section-label"><i data-lucide="user" size="14"></i> 1. Student Identity</div>
+                        <input type="text" id="postAuthor" class="input-pro" placeholder="Primary Student Name">
+                        <div id="partner-container"></div>
+                        <button class="add-btn-sm" onclick="window.addInput('partner-container', 'partner-input', 'Add Partner Name')">
+                            <i data-lucide="user-plus" size="14"></i> Add Partner Name
                         </button>
                     </div>
 
-                    <div class="form-section">
-                        <span class="section-label">Assignment Content</span>
-                        <textarea id="postContent" rows="6" placeholder="Document your process, findings, and results..."></textarea>
+                    <div class="form-card-section">
+                        <div class="section-label"><i data-lucide="help-circle" size="14"></i> 2. The Question</div>
+                        <textarea id="postQuestion" class="input-pro" rows="2" placeholder="Paste the problem statement here..."></textarea>
                     </div>
 
-                    <div class="form-actions">
-                        <button id="submitBtn" class="btn-primary-premium">Publish to Blog Page</button>
-                        <button class="nav-btn" onclick="window.showView('home')">Cancel</button>
+                    <div class="form-card-section">
+                        <div class="section-label"><i data-lucide="type" size="14"></i> 3. Project Title</div>
+                        <input type="text" id="postTitle" class="input-pro" placeholder="Enter Project Title">
+                    </div>
+
+                    <div class="form-card-section">
+                        <div class="section-label"><i data-lucide="layers" size="14"></i> 4. Documentation</div>
+                        <div id="content-blocks"></div>
+                        <button class="btn-ghost-add" onclick="window.addContentBlock()">+ Add Section</button>
+                    </div>
+
+                    <div class="form-card-section">
+                        <div class="section-label"><i data-lucide="link" size="14"></i> 5. Visuals & Links</div>
+                        <div id="image-container"></div>
+                        <button class="add-btn-sm btn-image-accent" onclick="window.addInput('image-container', 'image-input', 'Image URL')">
+                            <i data-lucide="image" size="14"></i> Add Image
+                        </button>
+                        <div id="ref-container" style="margin-top:10px;"></div>
+                        <button class="add-btn-sm btn-link-accent" onclick="window.addInput('ref-container', 'ref-input', 'Reference URL')">
+                            <i data-lucide="external-link" size="14"></i> Add Source Link
+                        </button>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-top: 20px;">
+                        <button id="submitBtn" class="publish-btn">Publish to Blog</button>
+                        <button class="nav-btn" onclick="window.showView('home')" style="flex:1; justify-content:center; border:1px solid #e2e8f0;">Cancel</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <div id="admin-modal" class="modal-overlay" style="display:none;">
-        <div class="modal-content">
-            <i data-lucide="lock" size="40" color="#6366f1"></i>
-            <h3>Teacher Access</h3>
-            <p>Enter the master password to manage Blog.</p>
-            <input type="password" id="adminPass" placeholder="••••••••">
-            <button onclick="window.verifyAdmin()" class="btn-primary-premium" style="margin-top:20px;">Verify Identity</button>
-            <button onclick="window.closeAdminModal()" class="nav-btn" style="width:100%; justify-content:center;">Go Back</button>
-        </div>
-    </div>
-
+<div id="copyright" align="center">
+    &copy;  2026 Athul Studio - All Rights Reserved.
+</div>
+<script>
+(() => {
+    const copyrightElement = document.getElementById("copyright");
+    copyrightElement.innerHTML = "&copy;  "+new Date().getFullYear()+" Athul Studio - All Rights Reserved.";
+})();
+</script>
     <script type="module" src="app.js"></script>
+    <script>window.onload = () => lucide.createIcons();</script>
 </body>
 </html>
