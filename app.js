@@ -93,7 +93,7 @@ document.getElementById('submitBtn').onclick = async () => {
         return `### ${h}\n${p}`;
     }).join("\n\n");
 
-    const fullBody = `**Question:** ${question}\n\n${blocks}`;
+    const fullBody = ` Question:  ${question}\n\n${blocks}`;
     const photos = Array.from(document.querySelectorAll('.image-input')).map(i => i.value.trim()).filter(v => v);
     const links = Array.from(document.querySelectorAll('.ref-input')).map(i => i.value.trim()).filter(v => v);
 
