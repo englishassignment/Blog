@@ -94,7 +94,9 @@
                 </div>
             </div>
         </section>
-                     <div id="admin-modal" class="modal-overlay" style="display:none;">
+                     
+    </main>
+        <div id="admin-modal" class="modal-overlay" style="display:none;">
         <div class="modal-content">
             <div class="modal-close" onclick="window.closeAdminModal()">
                 <i data-lucide="x"></i>
@@ -103,20 +105,19 @@
                 <i data-lucide="shield-check" size="40"></i>
             </div>
             <h3>Teacher Access</h3>
-            <p>Enter password to enable Edit and Delete privileges.</p>
+            <p>Verify your identity to enable Edit/Delete privileges.</p>
             
             <div class="modal-form">
                 <div class="input-group">
                     <i data-lucide="lock" size="16"></i>
-                    <input type="password" id="adminPass" placeholder="Enter Teacher Password">
+                    <input type="password" id="adminPass" placeholder="Teacher Password">
                 </div>
                 <button onclick="window.verifyAdmin()" class="modal-login-btn">
                     Verify Identity
                 </button>
             </div>
         </div>
-                     </div>
-    </main>
+        </div>
 <div id="copyright" align="center">
     &copy;  2026 Athul Studio - All Rights Reserved.
 </div>
