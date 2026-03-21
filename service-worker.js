@@ -1,11 +1,11 @@
 const CACHE_NAME = "aec-blog-v1";
 
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/app.js",
-  "/1.png"
+  "/Blog/",
+  "/Blog/index.html",
+  "/Blog/style.css",
+  "/Blog/app.js",
+  "/Blog/1.png"
 ];
 
 // Install Service Worker
