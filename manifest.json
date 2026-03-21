@@ -1,0 +1,38 @@
+{
+  "name": "AEC BLOG",
+  "short_name": "AEC BLOG",
+  "description": "AEC Blog Assignment application",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F6F4F1",
+  "theme_color": "#F6F4F1",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "1.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "1.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "1.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
