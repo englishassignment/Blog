@@ -22,6 +22,38 @@ window.showView = (view) => {
     document.getElementById(`${view}-view`).style.display = 'block';
     lucide.createIcons();
 };
+///////////
+window.openAdminModal = () => {
+    document.getElementById('admin-modal').style.display = 'flex';
+    document.getElementById('adminPass').focus();
+};
+
+window.closeAdminModal = () => {
+    document.getElementById('admin-modal').style.display = 'none';
+    document.getElementById('adminPass').value = '';
+};
+
+window.verifyAdmin = () => {
+    const passInput = document.getElementById('adminPass');
+    // Change "teacher123" to your preferred password
+    if (passInput.value === "teacher123") {
+        isAdmin = true;
+        window.closeAdminModal();
+        alert("Teacher Mode Active! You can now edit and delete posts.");
+        
+        // Refresh the feed to show the hidden admin buttons
+        if (typeof renderFeed === "function") renderFeed(); 
+    } else {
+        alert("Invalid Password. Please try again.");
+        passInput.value = '';
+    }
+};
+
+// Optional: Allow pressing "Enter" to submit
+document.getElementById('adminPass')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') window.verifyAdmin();
+});
+
 
 // --- DYNAMIC FORM LOGIC ---
 window.addInput = (containerId, className, placeholder) => {
